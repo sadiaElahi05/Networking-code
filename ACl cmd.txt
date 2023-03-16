@@ -1,0 +1,51 @@
+
+ number/ name
+lab 5.4.12
+access-list 100 permit tcp host 172.22.34.66 host 172.22.34.62 eq ftp
+access-list 100 permit icmp 172.22.34.66 0.0.0.0 host 172.22.34.62
+
+int g0/0
+ip access-group 100 in
+
+
+ip access-list extenderd HTTP_ONLY
+permit tcp host 172.22.34.98 host 172.22.34.62 eq www
+permit icmp 172.22.34.98 0.0.0.0 host 172.22.34.62
+
+int g0/1
+ip access-group HTTP_ONLY in
+
+====================================================
+
+part-1
+#ip access-list extended ACL
+deny tcp host 172.31.1.101 host 64.101.255.254 eq 80
+deny tcp host 172.31.1.101 host 64.101.255.254 eq 443
+deny tcp host 172.31.1.101 host 64.103.255.254 eq 80
+deny tcp host 172.31.1.101 host 64.103.255.254 eq 443
+
+deny tcp host 172.31.1.102 host 64.101.255.254 eq ftp
+deny tcp host 172.31.1.102 host 64.103.255.254 eq ftp
+
+deny icmp host 172.31.1.103 host 64.101.255.254
+deny icmp host 172.31.1.103 host 64.103.255.254
+
+permit ip any any
+
+int g0/0
+ip acc-grup ACL in
+
+
+
+
+pert-2
+
+
+
+==============================
+
+
+
+
+
+

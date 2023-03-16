@@ -1,0 +1,699 @@
+6.4 Routing Configuration
+
+On hospital R1 router configuration:
+R1>en
+R1#Configure Terminal
+R1 (config) # interface s0/0/1
+R1 (config-if) # ip address 192.168.10.1 255.255.255.0
+R1(config-if) # no shutdown
+R1(config-if) # exit
+R1(config) # interface s0/0/0
+R1 (config-if) # ip address 192.168.50.2 255.255.255.0
+R1(config-if) # no shutdown
+Wireless Router (Hospital gateway):
+IP Address: 192.168.25.1
+Subnet Mask: 255.255.255.0
+Military Area Routing Configuration:
+R2 Router Configuration:
+R2>en
+R2#Configure Terminal
+R2 (config) # interface f0/0
+R2 (config-if) # ip address 192.168.60.1 255.255.255.0
+R2(config-if) # no shutdown
+R2(config-if) # exit
+R2(config) # interface s0/0/0
+R2 (config-if) # ip address 192.168.90.2 255.255.255.0
+R2(config-if) # no shutdown
+R2(config-if) # exit
+R2 (config) # interface f0/0
+R2 (config-if) # ip address 178.168.10.1 255.255.0.0
+R2(config-if) # no shutdown
+R2(config-if) # exit
+R2(config) # interface s0/0/1
+R2 (config-if) # ip address 192.168.20.1 255.255.255.0
+R2(config-if) # no shutdown
+R2(config-if) # exit
+R4 Router Configuration:
+R4>en
+R4#Configure Terminal
+R4 (config) # interface G0/0/2
+R4 (config-if) # ip address 182.168.0.1 255.255.0.0
+R4(config-if) # no shutdown
+R4(config-if) # exit
+R4(config) # interface G0/0/0
+R4(config-if) # ip address 192.168.60.2 255.255.255.0
+R4(config-if) # no shutdown
+R4(config-if) # exit
+R4 (config) # interface G0/0/1
+R4 (config-if) # ip address 202.56.215.1 255.255.0.0
+R4(config-if) # no shutdown
+R4(config-if) # exit
+University Area Routing Configuration:
+R5 Router configuration
+R5>en
+R5#Configure Terminal
+R5 (config) # interface S0/0/2
+R5 (config-if) # ip address 182.168.20.2 255.255.0.0
+R5(config-if) # no shutdown
+R5(config-if) # exit
+R5(config) # interface S0/0/1
+R5(config-if) # ip address 192.168.30.1 255.255.255.0
+R5(config-if) # no shutdown
+R5(config-if) # exit
+R5 (config) # interface F0/0
+R5 (config-if) # ip address 10.0.0.1 255.255.0.0
+R5(config-if) # no shutdown
+R5(config-if) # exit
+R5 (config) # interface F0/0
+R5 (config-if) # ip address 10.0.0.1 255.255.0.0
+R5(config-if) # no shutdown
+R5(config-if) # exit
+Office Router Configuration:
+R6 Router configuration
+R6>en
+R6#Configure Terminal
+R6 (config) # interface S0/1/0
+R6 (config-if) # ip address 10.1.1.1 255.255.255.252
+R6(config-if) # no shutdown
+R6(config-if) # exit
+R6(config) # interface S0/1/1
+R6(config-if) # ip address 10.2.2.1 255.255.255.252
+R6(config-if) # no shutdown
+R6(config-if) # exit
+R6 (config) # interface S0/0/1
+R6 (config-if) # ip address 192.168.30.2 255.255.255.0
+R6(config-if) # no shutdown
+R6(config-if) # exit
+R6 (config) # interface S0/0/0
+R6 (config-if) # ip address 192.168.40.1 255.255.255.0
+R6(config-if) # no shutdown
+R6(config-if) # exit
+ISP Router configuration
+ISP>en
+ISP#Configure Terminal
+ISP(config) # interface S0/1/0
+ISP(config-if) # ip address 10.2.2.1 255.255.255.252
+ISP(config-if) # no shutdown
+ISP(config-if) # exit
+ISP(config) # interface E1/0
+ISP(config-if) # ip address 172.16.3.1 255.255.255.0
+ISP(config-if) # no shutdown
+ISP(config-if) # exit
+ISP(config) # interface F0/0
+ISP (config-if) # ip address 192.168.0.5 255.255.255.0
+ISP(config-if) # no shutdown
+ISP(config-if) # exit
+ISP(config) # interface F0/1
+ISP(config-if) # ip address 192.168.10.1 255.255.255.0
+ISP(config-if) # no shutdown
+ISP(config-if) # exit
+R7 Router configuration
+R7>en
+R7#Configure Terminal
+R7 (config) # interface S0/1/0
+R7 (config-if) # ip address 10.1.1.1 255.255.255.252
+R7(config-if) # no shutdown
+R7(config-if) # exit
+R7(config) # interface F0/0
+R7(config-if) # ip address 209.165.200.224 255.255.255.248
+R7(config-if) # no shutdown
+R7(config-if) # exit
+Home Router Configuration
+R3>en
+R3#Configure Terminal
+R3 (config) # interface S0/0/0
+R3 (config-if) # ip address 192.168.40.2 255.255.255.0
+R3(config-if) # no shutdown
+R3(config-if) # exit
+R3(config) # interface F0/0
+R3(config-if) # ip address 192.168.10.12 255.255.255.0
+R3(config-if) # no shutdown
+R3(config-if) # exit
+R3 (config) # interface S0/0/1
+R3 (config-if) # ip address 192.168.50.1 255.255.255.0
+R3(config-if) # no shutdown
+R3(config-if) # exit
+
+6.5 Switchport Security Configuration
+
+University switch configuration:
+
+Switch-4>en
+Switch-4#Configure Terminal
+Switch-4 (config) # interface range fa0/1-9
+Switch-4 (config-if-range) # switchport mode access
+Switch-4 (config-if-range) # switchport port-security
+Switch-4 (config-if-range) # switchport port-security maximum 1
+Switch-4 (config-if-range) # switchport port-security mac-address sticky
+Switch-4 (config-if-range) # switchport port-security violation shutdown
+Switch-4 (config-if-range) # exit
+Switch-4 (config) # interface range f0/10-24, g0/1-2
+Switch-4 (config-if-range) # shutdown
+Switch-4 (config-if-range) #exit
+Switch-4 (config) # interface fa0/1
+Switch-4 (config-if) #shutdown
+Switch-4 (config-if) #no shutdown
+Hospital switch configuration:
+Switch-7>en
+Switch-7#Configure Terminal
+Switch-7 (config) # interface range fa0/2-3
+Switch-7 (config-if-range) # switchport mode access
+Switch-7 (config-if-range) # switchport port-security
+Switch-7 (config-if-range) # switchport port-security maximum 1
+Switch-7 (config-if-range) # switchport port-security mac-address sticky
+Switch-7 (config-if-range) # switchport port-security violation shutdown
+Switch-7 (config-if-range) # exit
+Switch-7 (config) # interface range f0/4-24, g0/1-2
+Switch-7 (config-if-range) # shutdown
+Switch-8 (config-if-range) #exit
+
+ 
+
+6.6 AAA Configuration On University
+
+R5> en
+R5# Configure Terminal
+R5 (config) # line vty 0 4
+R5(config-line) # password 123*
+R5(config-line) # enable password 123*
+R5(config-line) # exit
+R5 (config) # service password-encryption
+R5 (config) # aaa new-model
+R5 (config) # aaa authentication login default local
+R5 (config) # username root password root
+R5 (config) # exit
+
+6.7 DHCP Snooping Configuration 
+
+Switch-2> en
+Switch-2# Configure Terminal
+Switch-2(config) # Vlan 3
+Switch-2 (config-vlan) # interface range fa0/1-24
+Switch-2 (config-if-range) # switchport mode access
+Switch-2 (config-if-range) # switchport access vlan 3
+Switch-2 (config-if-range) # interface range f0/7-24
+Switch-2 (config-if-range) # shutdown
+Switch-2 (config-if-range) # exit
+Switch-2 (config) # ip dhcp snooping
+Switch-2 (config) # ip dhcp snooping vlan 3
+Switch-2 (config) # int f0/2
+Switch-2 (config-if) # ip dhcp snooping trust
+
+
+
+
+
+6.8 Firewall Implementation
+
+R2 Configuration:
+R2> en
+R2# Configure Terminal
+R2(config) # router ospf 12
+R2(config-router) # network 202.56.215.0 0.0.0.255 area 0 
+R2(config-router) # network 182.168.0.0 0.0.0.255 area 0 
+ASA-1 Configuration:
+Ciscoasa > en
+Ciscoasa# Configure Terminal
+ASA-1(config) # int vlan 1
+ASA-1(config-if) # no ip address 
+ASA-1(config-if) # no dhcpd address 192.168.1.5-192.168.1.36 inside
+ASA-1(config-if) # exit
+ASA-1(config) # config Terminal
+ASA-1(config) # int vlan 1
+ASA-1(config-if) # ip add 172.168.0.1 255.255.255.0
+ASA-1(configif) # no shutdown
+ASA-1(config-if) # nameif inside
+ASA-1(config-if) # security-level 100
+ASA-1(config-if) # int e0/1
+ASA-1(config-if) # switchport access vlan 1
+ASA-1(config-if) # int e0/2
+ASA-1(config-if) # swithcport access vlan 1
+ASA-1(config-if) # int e0/3
+ASA-1(config-if) # swithcport access vlan 1
+ASA-1(config-if) # int vlan 2
+ASA-1(config-if) # ip address 182.168.0.2 255.255.0.0
+ASA-1(config-if) # no shutdown
+ASA-1(config-if) # nameif outside
+ASA-1(config-if) # security level 0
+ASA-1(config-if) # int e0/0
+ASA-1(config-if) # swithcport access vlan 2
+ASA-1(config-if) # exit
+ASA-1(config) # dhcpd address 172.168.0.2-172.168.0.10 inside
+ASA-1(config) # dhcpd dns 202.56.215.2
+ASA-1(config) # route outside 0.0.0.0 0.0.0.0 182.168.0.1
+ASA-1(config) # object network military
+ASA-1(config-network-object) # subnet 172.168.0.0 255.255.0.0
+ASA-1(config- network-object) # nat (inside, outside) dynamic interface
+ASA-1(config- network-object) # exit
+ASA-1(config) # access-list 1 extended permit icmp any any
+ASA-1(config) # access-list 1 extended permit tcp any any 
+ASA-1(config) # int e0/0
+ASA-1(config) # access-group 1 in interface outside
+
+6.9 OSPF Routing Protocol
+
+R2 OSPF configuration:
+R2>en
+R2# Configure Terminal
+R2(config) # router ospf 10
+R2(config-router) # router-id 9.9.9.9
+R2(config-router) # network 192.168.0.0 0.0.0.255 area 2
+R2(config-router) # network 172.168.0.0 0.0.0.255 area 2
+R2(config-router) # network 192.168.10.0 0.0.0.255 area 0
+R2(config-router) # network 192.168.20.0 0.0.0.255 area 0
+R2(config-router) # exit
+R1 OSPF configuration:
+R1>en
+R1# Configure Terminal
+R1(config) # router ospf 10
+R1(config-router) # router-id 10.10.10.10
+R1(config-router) # network 192.168.90.0 0.0.0.255 area 0
+R1(config-router) # network 192.168.50.0 0.0.0.255 area 0
+ 
+R1(config-router) # network 192.168.70.0 0.0.0.255 area 1
+R1(config-router) # exit
+R5 OSPF configuration:
+R5>en
+R5# Configure Terminal
+R5(config) # router ospf 10
+R5(config-router) # router-id 8.8.8.8
+R5(config-router) # network 10.0.0.0 0.255.255.255 area 5
+R5(config-router) # network 12.0.0.0 0.255.255.255 area 5
+R5(config-router) # network 192.168.20.0 0.0.0.255 area 0
+R5(config-router) # network 192.168.30.0 0.0.0.255 area 0
+R5(config-router) # exit
+R7 OSPF configuration:
+R7>en
+R7# Configure Terminal
+R7(config) # router ospf 10
+R7(config-router) # router-id 4.4.4.4
+R7(config-router) # network 10.1.1.0 0.0.0.3 area 4
+R7(config-router) # network 209.165.200.224 0.0.0.7 area 4
+R7(config-router) # exit
+ISP OSPF configuration:
+ISP>en
+ISP# Configure Terminal
+ISP(config) # router ospf 10
+ISP(config-router) # router-id 3.3.3.3
+ISP(config-router) # network 10.2.2.0 0.0.0.3 area 4
+ISP(config-router) # network 172.16.3.0 0.0.255.255 area 4
+ISP(config-router) # network 192.168.0.0 0.0.255.255 area 4
+ISP(config-router) # network 192.168.10.0 0.0.255.255 area 4
+ISP(config-router) # exit
+
+
+
+
+R6 OSPF configuration:
+R6>en
+R6# Configure Terminal
+R6(config) # router ospf 10
+R6(config-router) # router-id 7.7.7.7
+R6(config-router) # network 192.168.30.0 0.0.0.255 area 0
+R6(config-router) # network 172.168.40.0 0.0.0.255 area 0
+R6(config-router) # network 10.1.1.0 0.0.0.3 area 4
+R6(config-router) # network 10.2.2.0 0.0.0.3 area 4
+R6(config-router) # exit
+
+R3 OSPF configuration:
+R3>en
+R3# Configure Terminal
+R3(config) # router ospf 10
+R3(config-router) # router-id 6.6.6.6
+R3(config-router) # network 192.168.0.0 0.0.255.255 area 3
+R3(config-router) # network 192.168.40.0 0.0.0.255 area 0
+R3(config-router) # network 192.168.50.0 0.0.0.255 area 0
+R3(config-router) # network 192.168.10.0 0.0.0.255 area 0
+R3(config-router) # exit
+
+6.10 Demilitarized Zone Configuration
+
+Ciscoasa > en
+Ciscoasa #Configure Terminal
+Ciscoasa (config) # hostname ASA-5505
+ASA-5505(config) # domain-name academy.com
+ASA-5505(config) # enable password cisco
+ASA-5505(config) # int vlan 1
+ASA-5505(config) # nameif inside
+ASA-5505(config) # ip address 192.168.1.1 255.255.255.0
+ASA-5505(configi-f) # security-level 100
+ASA-5505(config-if) # exit
+ASA-5505(config) # int vlan 2
+ASA-5505(config) # ip address 209.165.200.226 255.255.255.248
+ASA-5505(config-if) # security-level 0
+ASA-5505(config-if) # no shutdown
+ASA-5505(config-if) # exit
+ASA-5505(config) # route outside 0.0.0.0 0.0.0.0 209.165.200.225
+
+ASA-5505(config) #object network INSIDE-NET
+ASA-5505(config-network-object) # subnet 192.168.1.0 255.255.255.0
+ASA-5505(config-network-object) # nat (inside, outside) dynamic interface 
+ASA-5505(config-network-object) # exit
+ASA-5505(config) #class-map inspection-default
+ASA-5505(config-cmap) # match default-inspection-traffic
+ASA-5505(config) # exit
+ASA-5505(config) # policy-map global-policy
+ASA-5505(config-pmap) # class inspection-default 
+ASA-5505(config-pmap) # inspect icmp
+ASA-5505(config) # exit
+ASA-5505(config) # service-policy global-policy global
+ASA-5505(config) # dhcp address 192.168.1.5-192.168.1.36 inside
+ASA-5505(config) # dhcp enable inside
+SSH:
+ASA-5505(config) # username Admin1 password Cisco
+ASA-5505(config) # aaa authentication ssh console LOCAL
+ASA-5505(config) # crypto key generate rsa module 1234
+ASA-5505(config) # ssh 192.168.1.0 255.255.255.0 inside
+ASA-5505(config) # ssh 172.16.3.3 255.255.255.255 outside
+ASA-5505(config) # ssh timeout 10
+ASA-5505(config) # int vlan 3
+ASA-5505(config-if) # ip address 192.168.2.1 255.255.255.0
+ASA-5505(config-if) # no forward interface vlan 1
+ASA-5505(config-if) # nameif dmz
+ASA-5505(config-if) # security-level 70
+ASA-5505(config-if) # exit
+ASA-5505(config) #int e0/2
+ASA-5505(config-if) # switchport access vlan 3
+ASA-5505(config-if) # show int ip brief
+ASA-5505(config-if ) #exit
+NAT & ACL:
+ASA-5505(config) #object network DMZ-SVR
+ASA-5505(config-network-object) # host 192.168.2.3
+ASA-5505(config-network-object) # nat (dmz, outside) static 209.165.200.227
+ASA-5505(config) # exit
+ASA-5505# Configure Terminal
+ASA-5505(config) # access-list OUTSIDE-DMZ permit icmp any host 192.168.2.3
+ASA-5505(config) # access-list OUTSIDE-DMZ permit tcp any host 192.168.2.3
+ASA-5505(config) # access-group OUTISIDE-DMZ in interface outside
+
+code:
+function setup() {
+	pinMode(0, INPUT);
+	pinMode(1, OUTPUT);
+
+}
+
+function loop() {
+	var pb = digitalRead(0);
+		Serial.println(pb);
+		if(pb == 1023){
+	digitalWrite(1, HIGH);
+		}
+		else{
+	digitalWrite(1, LOW);
+	
+		}
+}
+
+
+website Code:
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    transition: 0.5s;
+    
+}
+a{
+    color: #fff;
+    text-decoration: none;
+}
+.navlist{
+    width: 100%;
+    padding: 10px 10vw;
+    position: fixed;
+    background: #4B79A1d0;
+    /* background:#020320d0; */
+  
+    
+}
+.navlist ul{
+    display: flex;
+    list-style: none;
+    color:white;
+   
+}
+.navlist ul li:first-child{
+   flex:1;
+
+}
+.navlist ul li h4{
+    font-family: 'Times New Roman', Times, serif;
+   
+}
+.navlist ul a{
+   margin-left:20px;
+   /* color:#694f5d; */
+   
+}
+.navlist ul a:hover{
+    color:#985277;
+ }  
+
+
+
+
+/* CONTAINER */
+.container{
+    width:100%;
+    height: 80vh;
+    
+
+    padding-top: 15vh;
+  
+
+     background-image: (../images/hero-bg.jpg);
+    text-align: center;
+    color:#fff;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.container h1{
+    font-family: serif;
+    margin-bottom: 20px;
+    word-spacing: 5px;
+    font-size: 35px;
+}
+.container p{
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    font-size: 25px;
+}
+.container button{
+    padding: 10px;
+    background:#f80;
+    border: 1px solid  #f80;
+   
+}
+.notice{
+    padding: 10px 0px;
+    background-color: #2596be;
+} 
+
+
+.cards-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 30px 0px;
+    background-color: lightcyan;
+    /* margin:auto; */
+    /* flex-direction: row; */
+    /* margin: 0 10px; */
+}
+.title h2{
+    text-align: center;
+    font-size: 30px;
+    color: #283E51;
+    
+    
+    
+}
+.card {
+    margin: 20px 20px; 
+     padding: 30px 30px;
+    border: 2px solid blue;
+    background-color: paleturquoise;
+    /* flex: 0 35 22%; */
+    text-align: center;
+    display: inline-block; 
+    
+}
+.card h1{
+    color:#4275f5;
+}
+/* .card i{
+    font-size: 95px;
+} */
+/*content box */
+.content-box{
+    width: 80%;
+    margin: auto;
+    padding-bottom: 30px;
+  
+}
+.content-box>h2{
+    text-align: center;
+    color:#f80;
+    margin:20px;
+    font-size: 30px;
+}
+.content-box .row{
+    display: flex;
+    justify-content: space-between;
+}
+.content-box .column{
+    width: 30.6%;
+    height: auto;
+    position: relative;
+}
+.content-box img{
+    width: 330px;
+    height: 260px;
+}
+.content-box .column a:last-child{
+    position: absolute;
+    width: 100%;
+    height: 0;
+    top:100%;
+    left:0;
+    bottom: 0;
+    background-color: #ff8800c3;
+    text-align: center;
+    
+    /* line-height: 15vw; */
+    font-size: 2vw;
+   
+}
+.content-box .column:hover a:last-child{
+    height: 100%;
+    top:0;
+}
+.footer{
+    background-color:black;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0px;
+
+
+}
+.footer .copyright{
+    color: white;
+    font-size: 19px;
+}
+.social-links i{
+    padding-left: 5px;
+}
+
+
+HTML:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhaka City College</title> 
+    <link rel="stylesheet" href="index.css">
+   
+    
+    
+
+
+</head>
+<body>
+    <nav class="navlist">
+        <ul>
+            <li><b> NATIONAL UNIVERSITY</b> </li>
+            <li><a href="">HOME</a></li>
+
+            <li><a href="">ABOUT US</a></li>
+             
+            <li><a href="">COURSES</a></li>
+            <li><a href="">FACULTY</a></li>
+            <li><a href="">NOTICE</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        
+        <img src="../images/logo1.gif" alt="logo.jpg" width="100px">
+ <a href="">CANTEEN</a>
+            </div>
+        
+        </div>
+    </div>
+ <h1>NATIONAL UNIVERSITY</h1>
+        <p>Public university in Gazipur</p>
+        <button> <a href="">ENROLL NOW</a>  </button>
+        
+    </div>
+    <div class="notice">
+        <marquee behavior="" direction="">২০২০ সালের ডিগ্রি (পাস) ২য় বর্ষ পরীক্ষার প্রবেশপত্র/হাজিরাপত্র/পরীক্ষার্থীদের রোল বিবরণী ডাউনলোড করতে ভিজিট করুন www.nubd.info/admit এবং www.nu.ac.bd/admit 
+        </marquee>
+    </div>
+    
+
+    <div class="cards-container">
+        <div class="title">
+            <h2> <b>ONLINE FORM FILL-UP</b> </h2>
+        
+        <!--   <br> -->
+        
+        <div class="card">
+            <h1>Degree</h1>
+            <p>Degree 1st, 2nd and 3rd year <br>
+                Online form fill-up.</p> <br>
+                <i class="fa-solid fa-graduation-cap"></i>
+                
+              
+        </div>
+        <div class="card">
+            <h1>Honours</h1>
+            <p> Bachelor Degree Honours 1st, <br>
+                2nd,3rd and  4th year Online form <br>
+                fill-up. <br>
+            </p> <i class="fa-solid fa-graduation-cap"></i>
+            
+           
+        </div>
+        <div class="card">
+            <h1>Masters</h1>
+            <p> Masters Part-1 and Final Online <br>form fill-up</p> <br>
+            <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div class="card">
+            <h1>Professionals</h1>
+            <p>Online Form fill-up for <br> Professional   <br>
+                <br>
+            <i class="fa-solid fa-graduation-cap"></i>
+              
+            
+        </div>
+        </div>
+        </div>
+        <div class="content-box">
+            <h2>FACILITIES</h2>
+        <div class="row">
+            <div class="column">
+              <a href=""><img src="../images/c1.jpg" alt="c1.jpg"></a>
+              <a href="">CANTEEN</a>
+            </div>
+        
+        </div>
+    </div>
+      
+        <div class="footer">
+            <div class="copyright">
+                &copy; Copyright <strong><span>National University</span></strong>. All Rights Reserved
+              </div>
+              <div class="icon">
+ </div>
+        </div>
+</body>
+</html>
+	
+			
+
+
